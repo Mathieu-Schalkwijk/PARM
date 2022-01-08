@@ -348,7 +348,6 @@
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(820,780)" name="Constant">
-      <a name="value" val="0x0"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(830,640)" name="Tunnel">
