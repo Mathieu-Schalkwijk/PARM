@@ -17,7 +17,7 @@ def verif():
     lines1 = file.readlines()
     file.close()
 
-    file = open(os.path.join(__location__,"codeAttendu.txt"),"r") #ouvre en lecture
+    file = open(os.path.join(__location__,"TEST_codeAttendu.txt"),"r") #ouvre en lecture
     lines2 = file.readlines()
     file.close()
 
