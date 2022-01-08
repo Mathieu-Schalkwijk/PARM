@@ -216,10 +216,6 @@ end TCL_Generic;
       <circ-anchor facing="east" height="6" width="6" x="247" y="57"/>
       <circ-port height="10" pin="680,110" width="10" x="245" y="55"/>
       <circ-port height="10" pin="690,340" width="10" x="245" y="75"/>
-      <circ-port height="10" pin="940,110" width="10" x="245" y="85"/>
-      <circ-port height="10" pin="940,140" width="10" x="245" y="95"/>
-      <circ-port height="10" pin="940,180" width="10" x="245" y="105"/>
-      <circ-port height="10" pin="940,80" width="10" x="245" y="65"/>
       <circ-port height="8" pin="210,140" width="8" x="46" y="76"/>
       <circ-port height="8" pin="210,410" width="8" x="46" y="96"/>
       <circ-port height="8" pin="210,430" width="8" x="46" y="116"/>
@@ -415,44 +411,6 @@ end TCL_Generic;
       <a name="facing" val="west"/>
       <a name="label" val="Verified"/>
       <a name="output" val="true"/>
-    </comp>
-    <comp lib="0" loc="(940,110)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-    </comp>
-    <comp lib="0" loc="(940,110)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="B"/>
-    </comp>
-    <comp lib="0" loc="(940,140)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="8"/>
-    </comp>
-    <comp lib="0" loc="(940,140)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="imm8"/>
-      <a name="width" val="8"/>
-    </comp>
-    <comp lib="0" loc="(940,180)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="11"/>
-    </comp>
-    <comp lib="0" loc="(940,180)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="imm11"/>
-      <a name="width" val="11"/>
-    </comp>
-    <comp lib="0" loc="(940,80)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(940,80)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="cond"/>
-      <a name="width" val="4"/>
     </comp>
     <comp lib="1" loc="(680,340)" name="AND Gate">
       <a name="size" val="30"/>
