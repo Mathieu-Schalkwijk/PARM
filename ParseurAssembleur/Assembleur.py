@@ -52,7 +52,13 @@ def lecture():
     fichier =open(os.path.join(__location__,"instructionsHexa.txt"),"w")
     fichier.write("v2.0 raw \n")
 
-    for i in range(len(lines)):lines[i]=lines[i].upper() #On met tout en majuscule
+    nouvellesLignes=[]
+
+    for i in range(len(lines)):
+        lines[i]=lines[i].upper() #On met tout en majuscule
+        m=re.match(r"\s*@\w",lines[i]) #detecte les commentaires
+        if(not m):nouvellesLignes.append(lines[i])
+    lines=nouvellesLignes
     i=0
 
     while count<len(lines):
@@ -76,7 +82,7 @@ def decodeInstruction(ligne):
 
     #shift, add, sub, mov
     m=re.match(r"\s*LSLS\s+R(?P<Rd>\d+),+\s+R(?P<Rm>\d+),+\s+#(?P<imm5>\d+)",ligne)
-    if(m): print("aaaaa");return shiftAddSub+"000"+imm5(m[3])+reg(m[2])+reg(m[1])
+    if(m):return shiftAddSub+"000"+imm5(m[3])+reg(m[2])+reg(m[1])
         
     m=re.match(r"\s*LSRS\s+R(?P<Rd>\d+),+\s+R(?P<Rm>\d+),+\s+#(?P<imm5>\d+)",ligne)
     if(m): return shiftAddSub+"001"+imm5(m[3])+reg(m[2])+reg(m[1])
@@ -93,12 +99,18 @@ def decodeInstruction(ligne):
     m=re.match(r"\s*ADDS\s+R(?P<Rd>\d+),+\s+R(?P<Rn>\d+),+\s+#(?P<imm3>\d+)",ligne)
     if(m): return shiftAddSub+"01110"+imm3(m[3])+reg(m[2])+reg(m[1])
 
+    m=re.match(r"\s*ADDS\s+R(?P<Rd>\d+),+\s+#(?P<imm8>\d+)",ligne)
+    if(m): return shiftAddSub+"110"+reg(m[1])+imm8(m[2])
+
     m=re.match(r"\s*SUBS\s+R(?P<Rd>\d+),+\s+R(?P<Rn>\d+),+\s+#(?P<imm3>\d+)",ligne)
     if(m): return shiftAddSub+"01111"+imm3(m[3])+reg(m[2])+reg(m[1])
 
     m=re.match(r"\s*MOVS\s+R(?P<Rd>\d+),+\s+#+(?P<imm8>\d+)",ligne)
     if(m): return shiftAddSub+"100"+reg(m[1])+imm8(m[2])
 
+    m=re.match(r"\s*MOVS\s+R(?P<Rd>\d+),+\s+R(?P<imm5>\d+)",ligne) #MOVS du test calculator
+    if(m): return shiftAddSub+"000"+imm5(0)+reg(m[2])+reg(m[1])
+    
     m=re.match(r"\s*CMP\s+R(?P<Rd>\d+),+\s+#(?P<imm8>\d+)",ligne)
     if(m): return shiftAddSub+"101"+reg(m[1])+imm8(m[2])
 
@@ -218,7 +230,9 @@ def label(lab):
         m=re.match(r"\s*\.+([\w]+\d)",ligne)
 
         if(m and m[1]==lab):break #Si la ligne actuelle indique le label qu'on recherche, on arrête
+        
         if(not m): offset+=1 #Si on a pas de ligne indiquant un label, on consiere qu'on a une instruction
+         
     
         j+=1
       
