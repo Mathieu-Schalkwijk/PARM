@@ -262,11 +262,11 @@ end TCL_Generic;
     </comp>
     <comp lib="0" loc="(390,130)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="U_Z"/>
+      <a name="label" val="I_Z"/>
     </comp>
     <comp lib="0" loc="(390,160)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="I_Z"/>
+      <a name="label" val="U_Z"/>
     </comp>
     <comp lib="0" loc="(390,190)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -274,11 +274,11 @@ end TCL_Generic;
     </comp>
     <comp lib="0" loc="(390,270)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="U_C"/>
+      <a name="label" val="I_C"/>
     </comp>
     <comp lib="0" loc="(390,300)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="I_C"/>
+      <a name="label" val="U_C"/>
     </comp>
     <comp lib="0" loc="(390,330)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -286,11 +286,11 @@ end TCL_Generic;
     </comp>
     <comp lib="0" loc="(390,410)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="U_V"/>
+      <a name="label" val="I_V"/>
     </comp>
     <comp lib="0" loc="(390,440)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="I_V"/>
+      <a name="label" val="U_V"/>
     </comp>
     <comp lib="0" loc="(390,470)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -310,11 +310,11 @@ end TCL_Generic;
     </comp>
     <comp lib="0" loc="(480,40)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="U_N"/>
+      <a name="label" val="I_N"/>
     </comp>
     <comp lib="0" loc="(480,70)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="I_N"/>
+      <a name="label" val="U_N"/>
     </comp>
     <comp lib="0" loc="(500,150)" name="Tunnel">
       <a name="label" val="S_Z"/>
