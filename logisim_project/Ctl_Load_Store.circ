@@ -285,6 +285,7 @@ end TCL_Generic;
     </comp>
     <comp lib="0" loc="(390,470)" name="Bit Extender">
       <a name="out_width" val="32"/>
+      <a name="type" val="zero"/>
     </comp>
     <comp lib="0" loc="(460,280)" name="Pin">
       <a name="label" val="Clk"/>
