@@ -25,12 +25,8 @@
 	.thumb_func
 run:
 	.fnstart
-	.save	{r7, lr}
-	push	{r7, lr}
-	.setfp	r7, sp
-	add	r7, sp, #0
-	.pad	#104
-	sub	sp, #104
+	.pad	#100
+	sub	sp, #100
 	@APP
 	sub	sp, #508
 	@NO_APP
@@ -38,59 +34,58 @@ run:
 	sub	sp, #452
 	@NO_APP
 	movs	r0, #0
-	str	r0, [sp, #16]
+	str	r0, [sp, #12]
 	b	.LBB0_1
 .LBB0_1:
-	ldr	r0, [sp, #16]
+	ldr	r0, [sp, #12]
 	cmp	r0, #9
 	bgt	.LBB0_3
 	b	.LBB0_2
 .LBB0_2:
-	ldr	r0, [sp, #16]
+	ldr	r0, [sp, #12]
 	adds	r0, r0, #1
-	str	r0, [sp, #16]
+	str	r0, [sp, #12]
 	b	.LBB0_1
 .LBB0_3:
-	ldr	r0, [sp, #16]
+	ldr	r0, [sp, #12]
 	cmp	r0, #9
 	bgt	.LBB0_5
 	b	.LBB0_4
 .LBB0_4:
 	movs	r0, #5
-	str	r0, [sp, #16]
+	str	r0, [sp, #12]
 	b	.LBB0_6
 .LBB0_5:
 	movs	r0, #6
-	str	r0, [sp, #16]
+	str	r0, [sp, #12]
 	b	.LBB0_6
 .LBB0_6:
 	movs	r0, #100
-	str	r0, [sp, #12]
-	movs	r0, #0
 	str	r0, [sp, #8]
-	ldr	r0, [sp, #12]
+	movs	r0, #0
+	str	r0, [sp, #4]
+	ldr	r0, [sp, #8]
 	subs	r0, #50
 	cmp	r0, #50
 	blt	.LBB0_8
 	b	.LBB0_7
 .LBB0_7:
 	movs	r0, #40
-	str	r0, [sp, #8]
-	ldr	r0, [sp, #12]
-	movs	r1, #10
-	bl	__aeabi_idiv
-	str	r0, [sp, #8]
-	ldr	r0, [sp, #8]
+	str	r0, [sp, #4]
+	ldr	r0, [sp, #4]
 	movs	r1, #80
 	muls	r1, r0, r1
-	str	r1, [sp, #8]
+	str	r1, [sp, #4]
+	movs	r0, #175
+	lsls	r0, r0, #1
+	str	r0, [sp, #4]
 	b	.LBB0_8
 .LBB0_8:
 	movs	r0, #50
-	str	r0, [sp, #4]
+	str	r0, [sp]
 	movs	r0, #0
 	mvns	r0, r0
-	str	r0, [sp, #4]
+	str	r0, [sp]
 	b	.LBB0_9
 .LBB0_9:
 	b	.LBB0_10

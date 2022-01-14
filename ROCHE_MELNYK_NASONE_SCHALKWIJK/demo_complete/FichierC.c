@@ -28,9 +28,10 @@ void run(){
 //test d'un if, la condition est vraie
   if((logique-50)>=50){
       p=40;
-      //test des divisions et multiplication
-      p=logique/10;
+      //test des multiplications
       p=p*80;
+      p=10*35;
+   
   }
 
 //Soustraction donnant -1 en compléent à 1 en hexa, cela vaut ffffffff
